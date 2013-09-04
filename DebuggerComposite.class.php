@@ -3,7 +3,7 @@
 	class DebuggerComposite implements Debugger {
 		
 		protected $debuggers = array();
-		private $_messageIndicator = '';
+		private $_messageIndicator = FALSE;
 		private $_messageClassName = 'debug';
 		
 		public function addDebugger(Debugger $debugger) {
@@ -23,7 +23,7 @@
 		}
 		
 		public function isMessageIndicatorSet() {
-			if($this->_messageIndicator != '') {
+			if($this->_messageIndicator !== FALSE) {
 				return TRUE;
 			} else {
 				return FALSE;
