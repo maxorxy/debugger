@@ -2,7 +2,9 @@
 
 	class DebuggerComposite implements Debugger {
 		
+		/* Used Debuggers, Stored In An Array */
 		protected $debuggers = array();
+		
 		private $_messageIndicator = '';
 		private $_messageClassName = 'debug';
 		
