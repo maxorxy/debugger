@@ -2,36 +2,19 @@
 
 	class DebuggerComposite implements Debugger {
 		
+		/* Array To Store Used Debuggers */
 		protected $debuggers = array();
-		private $_messageIndicator = FALSE;
-		private $_messageClassName = 'debug';
 		
+		/* Method Which Assigns The Messages To Every Debugger Stored */
+		public function debug($message) {
+			foreach($this->debuggers as $debugger) {
+				$debugger->debug($message);
+			}
+		}
+		
+		/* Method To Add Another Debugger Which Handles Messages */
 		public function addDebugger(Debugger $debugger) {
 			$this->debuggers[] = $debugger;
-		}
-		
-		public function debug($message) {
-			if($this->isMessageIndicatorSet()) {
-				foreach($this->debuggers as $debugger) {
-					$debugger->debug('<span class = "'.$this->_messageClassName.'">'.$this->_messageIndicator.$message.'</span>');
-				}
-			}
-		}
-		
-		public function setMessageIndicator($indicator) {
-			$this->_messageIndicator = $indicator;
-		}
-		
-		public function isMessageIndicatorSet() {
-			if($this->_messageIndicator !== FALSE) {
-				return TRUE;
-			} else {
-				return FALSE;
-			}
-		}
-		
-		public function setMessageClassName($className) {
-			$this->_messageClassName = $className;
 		}
 	}
 
