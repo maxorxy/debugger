@@ -36,6 +36,8 @@
 	$debuggerInfoEcho->setMessageClassName('debugInfo');
 	$debuggerErrorEcho->setMessageClassName('debugError');
 	
+	$debuggerErrorEcho->setStandardMessage('StandardMessage To Echo');
+	
 	/* One Info And One Error Message */
 	$debuggerInfo->debug('infoMessage');
 	$debuggerError->debug('errorMessage');
