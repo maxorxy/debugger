@@ -31,3 +31,6 @@
 ### debug.php ###
 	
 - Just a simple example for using the debugger
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/maxorxy/debugger/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
